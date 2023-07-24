@@ -15,16 +15,24 @@ configure_sudo() {
     EDITOR=nvim visudo
 }
 
-configure_network() {
-    echo "Configuring network..."
-    ping -c 3 archlinux.org
-    echo "If you're not connected, please use 'iwctl' to connect to your WiFi network."
-}
-
 configure_zsh() {
     echo "Configuring zsh for the new user..."
     su - $username
     zsh /etc/skel/.zshrc
+}
+
+check_network() {
+    echo "Checking network connection..."
+    ping -c 3 archlinux.org || { echo "Error: Not connected to the network. Please connect to a network and run the script again." && exit 1; }
+}
+
+install_yay() {
+    echo "Installing yay..."
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd ..
+    rm -rf yay
 }
 
 configure_pipewire() {
@@ -48,16 +56,17 @@ configure_programming_envs() {
 
 install_additional_software() {
     echo "Installing additional desired software..."
-    sudo pacman -S firefox
+    yay -S librewolf-bin
 }
 
 # List of all functions to be executed
 tasks=(
     create_new_user
     configure_sudo
-    configure_network
     configure_zsh
+    check_network
     install_configure_editor
+    install_yay
     configure_pipewire
     configure_i3
     configure_programming_envs
