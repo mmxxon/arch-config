@@ -50,14 +50,7 @@ create_pacman_hook() {
     echo -e "[Trigger]\nOperation = Install\nOperation = Upgrade\nType = Package\nTarget = *\n\n[Action]\nDescription = Logging explicitly installed packages\nWhen = PostTransaction\nExec = /usr/bin/bash -c 'echo \"$(date): $(pacman -Qe)\" >> /var/log/explicit_packages.log'" > /etc/pacman.d/hooks/explicit-install-logging.hook
 }
 
-reboot_system() {
-    echo "Rebooting..."
-    exit
-    umount -R /mnt
-    reboot
-}
-
-# List of all functions to be executed
+# Define task names and corresponding functions in an associative array
 declare -A tasks
 tasks=(
     ["configure_timezone"]=configure_timezone
@@ -68,16 +61,16 @@ tasks=(
     ["configure_sudo"]=configure_sudo
     ["install_configure_bootloader"]=install_configure_bootloader
     ["create_pacman_hook"]=create_pacman_hook
-    ["reboot_system"]=reboot_system
 )
 
 # Catch errors
 trap 'echo "Script failed on task: $current_task"' ERR
 
 # Execution of tasks
+start_task=${1:-${!tasks[@]:0:1}}
 for current_task in "${!tasks[@]}"; do
-    if [[ -z "$1" || "$1" == "$current_task" ]]; then
+    if [[ "$current_task" == "$start_task" || -n "$execute" ]]; then
         ${tasks[$current_task]}
-        shift
+        execute=true
     fi
 done

@@ -18,7 +18,7 @@ mount_boot_partition() {
 
 install_base_system() {
     echo "Installing base system..."
-    pacstrap /mnt base base-devel linux linux-firmware amd-ucode neovim git dhcpcd iwd zsh postgresql nvidia nvidia-utils nvidia-settings pipewire pipewire-alsa pipewire-pulse pipewire-jack i3-wm python python-pip sudo rustup rxvt-unicode grub efibootmgr
+    pacstrap /mnt base base-devel linux linux-firmware amd-ucode neovim git dhcpcd iwd zsh postgresql nvidia nvidia-utils nvidia-settings pipewire pipewire-alsa pipewire-pulse pipewire-jack i3-wm python python-pip sudo rustup rxvt-unicode grub efibootmgr sudo python i3 xorg-server xorg-xinit xorg-xprop git make fakeroot rxvt-unicode pipewire wireplumber polkit ffmpeg
 }
 
 generate_fstab() {
@@ -31,7 +31,7 @@ chroot_system() {
     arch-chroot /mnt 
 }
 
-# List of all functions to be executed
+# Define task names and corresponding functions in an associative array
 declare -A tasks
 tasks=(
     ["setup_partitions"]=setup_partitions
@@ -45,10 +45,10 @@ tasks=(
 trap 'echo "Script failed on task: $current_task"' ERR
 
 # Execution of tasks
+start_task=${1:-${!tasks[@]:0:1}}
 for current_task in "${!tasks[@]}"; do
-    if [[ -z "$1" || "$1" == "$current_task" ]]; then
+    if [[ "$current_task" == "$start_task" || -n "$execute" ]]; then
         ${tasks[$current_task]}
-        shift
+        execute=true
     fi
 done
-
