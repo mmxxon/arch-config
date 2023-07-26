@@ -45,32 +45,35 @@ install_configure_bootloader() {
 }
 
 create_pacman_hook() {
-    echo "Creating pacman hook..."
+    echo "Creating pacman hooks..."
     mkdir -p /etc/pacman.d/hooks/
-    echo -e "[Trigger]\nOperation = Install\nOperation = Upgrade\nType = Package\nTarget = *\n\n[Action]\nDescription = Logging explicitly installed packages\nWhen = PostTransaction\nExec = /usr/bin/bash -c 'echo \"$(date): $(pacman -Qe)\" >> /var/log/explicit_packages.log'" > /etc/pacman.d/hooks/explicit-install-logging.hook
+    # For logging explicitly installed packages
+    echo -e "[Trigger]\nOperation = Install\nOperation = Upgrade\nType = Package\nTarget = *\n\n[Action]\nDescription = Logging explicitly installed packages\nWhen = PostTransaction\nExec = /usr/bin/bash -c '/usr/bin/pacman -Qqe | /usr/bin/grep -Fx -f - /var/log/explicit_packages.log || echo \"$1\" >> /var/log/explicit_packages.log'\nNeedsTargets" > /etc/pacman.d/hooks/explicit-install.hook
+    # For logging removal of explicit packages
+    echo -e "[Trigger]\nOperation = Remove\nType = Package\nTarget = *\n\n[Action]\nDescription = Logging removal of explicit packages\nWhen = PostTransaction\nExec = /usr/bin/bash -c '/usr/bin/grep -Fxv \"$1\" /var/log/explicit_packages.log > /tmp/explicit_packages.log && mv /tmp/explicit_packages.log /var/log/explicit_packages.log'\nNeedsTargets" > /etc/pacman.d/hooks/explicit-remove.hook
 }
 
 # Define task names and corresponding functions in an associative array
 declare -A tasks
 tasks=(
-    ["configure_timezone"]=configure_timezone
-    ["configure_localization"]=configure_localization
-    ["configure_network"]=configure_network
-    ["set_root_password"]=set_root_password
-    ["create_new_user"]=create_new_user
-    ["configure_sudo"]=configure_sudo
-    ["install_configure_bootloader"]=install_configure_bootloader
-    ["create_pacman_hook"]=create_pacman_hook
+    configure_timezone
+    configure_localization
+    configure_network
+    set_root_password
+    create_new_user
+    configure_sudo
+    install_configure_bootloader
+    create_pacman_hook
 )
 
 # Catch errors
 trap 'echo "Script failed on task: $current_task"' ERR
 
 # Execution of tasks
-start_task=${1:-${!tasks[@]:0:1}}
-for current_task in "${!tasks[@]}"; do
-    if [[ "$current_task" == "$start_task" || -n "$execute" ]]; then
-        ${tasks[$current_task]}
+start_task=${1:-${tasks[0]}}
+for ((current_task_index=0; current_task_index<${#tasks[@]}; current_task_index++)); do
+    if [[ "${tasks[$current_task_index]}" == "$start_task" || -n "$execute" ]]; then
+        ${tasks[$current_task_index]}
         execute=true
     fi
 done

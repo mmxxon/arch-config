@@ -34,21 +34,21 @@ chroot_system() {
 # Define task names and corresponding functions in an associative array
 declare -A tasks
 tasks=(
-    ["setup_partitions"]=setup_partitions
-    ["mount_boot_partition"]=mount_boot_partition
-    ["install_base_system"]=install_base_system
-    ["generate_fstab"]=generate_fstab
-    ["chroot_system"]=chroot_system
+    setup_partitions
+    mount_boot_partition
+    install_base_system
+    generate_fstab
+    chroot_system
 )
 
 # Catch errors
 trap 'echo "Script failed on task: $current_task"' ERR
 
 # Execution of tasks
-start_task=${1:-${!tasks[@]:0:1}}
-for current_task in "${!tasks[@]}"; do
-    if [[ "$current_task" == "$start_task" || -n "$execute" ]]; then
-        ${tasks[$current_task]}
+start_task=${1:-${tasks[0]}}
+for ((current_task_index=0; current_task_index<${#tasks[@]}; current_task_index++)); do
+    if [[ "${tasks[$current_task_index]}" == "$start_task" || -n "$execute" ]]; then
+        ${tasks[$current_task_index]}
         execute=true
     fi
 done

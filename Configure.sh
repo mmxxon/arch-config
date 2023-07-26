@@ -1,26 +1,5 @@
 #!/bin/bash
 
-# Define the tasks in functions
-create_new_user() {
-    echo "Creating new user..."
-    echo "Enter the username for the new user: "
-    read username
-    useradd -m -g users -G wheel -s /bin/zsh $username
-    echo "Enter password for the new user $username: "
-    passwd $username
-}
-
-configure_sudo() {
-    echo "Configuring sudo for the new user..."
-    EDITOR=nvim visudo
-}
-
-configure_zsh() {
-    echo "Configuring zsh for the new user..."
-    su - $username
-    zsh /etc/skel/.zshrc
-}
-
 check_network() {
     echo "Checking network connection..."
     ping -c 3 archlinux.org || { echo "Error: Not connected to the network. Please connect to a network and run the script again." && exit 1; }
@@ -56,14 +35,11 @@ configure_programming_envs() {
 
 install_additional_software() {
     echo "Installing additional desired software..."
-    yay -S librewolf-bin
+    yay -Sy librewolf-bin
 }
 
 # List of all functions to be executed
 tasks=(
-    create_new_user
-    configure_sudo
-    configure_zsh
     check_network
     install_configure_editor
     install_yay
