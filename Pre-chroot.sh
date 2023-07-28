@@ -18,7 +18,7 @@ mount_boot_partition() {
 
 install_base_system() {
     echo "Installing base system..."
-    pacstrap /mnt base base-devel linux linux-firmware amd-ucode neovim git dhcpcd iwd zsh postgresql nvidia nvidia-utils nvidia-settings pipewire pipewire-alsa pipewire-pulse pipewire-jack i3-wm python python-pip sudo rustup rxvt-unicode grub efibootmgr sudo python i3 xorg-server xorg-xinit xorg-xprop git make fakeroot rxvt-unicode pipewire wireplumber polkit ffmpeg
+    pacstrap /mnt reflector base base-devel linux linux-firmware amd-ucode neovim git dhcpcd iwd zsh postgresql nvidia nvidia-utils nvidia-settings pipewire pipewire-alsa pipewire-pulse pipewire-jack i3-wm python python-pip sudo rustup rxvt-unicode grub efibootmgr sudo python i3 xorg-server xorg-xinit xorg-xprop git make fakeroot alacritty pipewire wireplumber polkit ffmpeg
 }
 
 generate_fstab() {
