@@ -18,7 +18,7 @@ mount_boot_partition() {
 
 install_base_system() {
     echo "Installing base system..."
-    pacstrap /mnt reflector base base-devel linux linux-firmware neovim git dhcpcd iwd grub efibootmgr os-prober
+    pacstrap /mnt base base-devel linux linux-firmware neovim git dhcpcd iwd grub efibootmgr os-prober reflector
 }
 
 generate_fstab() {

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+log_file="error.log"
+
 check_network() {
     echo "Checking network connection..."
     ping -c 3 archlinux.org || { echo "Error: Not connected to the network. Please connect to a network and run the script again." && exit 1; }
@@ -14,16 +16,16 @@ install_yay() {
     rm -rf yay
 }
 
+run_additional_script() {
+	# bash configure_programs.sh software_list.csv config_list.csv
+	bash configure_programs.sh software_list.csv
+}
+
 configure_pipewire() {
     echo "Configuring Pipewire..."
     systemctl --user enable --now pipewire
     systemctl --user enable --now pipewire-pulse
     pactl info | grep "Server Name"
-}
-
-configure_i3() {
-    echo "Configuring the i3 window manager..."
-    cp /etc/i3/config ~/.config/i3/config
 }
 
 configure_programming_envs() {
@@ -33,24 +35,18 @@ configure_programming_envs() {
     gcc --version
 }
 
-install_additional_software() {
-    echo "Installing additional desired software..."
-    yay -Sy librewolf-bin
-}
-
 # List of all functions to be executed
 tasks=(
     check_network
-    install_configure_editor
     install_yay
+    run_additional_script
     configure_pipewire
     configure_i3
     configure_programming_envs
-    install_additional_software
 )
 
 # Catch errors
-trap 'echo "Script failed on task: ${tasks[$current_task_index]}"' ERR
+trap 'echo "Script failed on task: ${tasks[$current_task_index]}"; echo "Script failed on task: ${tasks[$current_task_index]}" >> $log_file' ERR
 
 # Execution of tasks
 start_task=${1:-${tasks[0]}}
