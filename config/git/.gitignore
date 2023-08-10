@@ -1,0 +1,86 @@
+# .gitignore
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and text editor files #
+##############################
+# Visual Studio Code
+.vscode/
+# Sublime Text
+*.sublime-workspace
+
+# Most of the following are taken from https://github.com/github/gitignore
+# Linux
+*~
+
+# Temporary files
+tmp/
+temp/
+
+# System files
+*.swp
+*~
+.*.swx
+.swx
+.swp
+
+# Compiled Files
+*.o
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.class
+
+# Build files
+Makefile
+.build/
+
+# Backup Files
+*.bak
+*.BAK
+*.bkp
+*.old
+*.backup
+
+# Other files
+*.log
+*.aux
+*.out

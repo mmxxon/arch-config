@@ -17,8 +17,8 @@ install_yay() {
 }
 
 run_additional_script() {
-	# bash configure_programs.sh software_list.csv config_list.csv
-	bash configure_programs.sh software_list.csv
+    # Assuming zsh is installed here as part of the additional script
+	bash configure_programs.sh software_list.csv config_list.csv
 }
 
 configure_pipewire() {
@@ -28,11 +28,9 @@ configure_pipewire() {
     pactl info | grep "Server Name"
 }
 
-configure_programming_envs() {
-    echo "Configuring your programming environments..."
-    rustup install stable
-    python --version
-    gcc --version
+configure_zsh() {
+    echo "Configuring ZSH with zinit..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 }
 
 # List of all functions to be executed
@@ -41,8 +39,7 @@ tasks=(
     install_yay
     run_additional_script
     configure_pipewire
-    configure_i3
-    configure_programming_envs
+    configure_zsh
 )
 
 # Catch errors

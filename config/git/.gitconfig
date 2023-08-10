@@ -1,0 +1,80 @@
+# ---- Global ----
+[user]
+    email = xon.dev@protonmail.com
+    name = Maksym Movchan
+    username = xon
+    signingkey = xon.dev@protonmail.com
+[credential]
+	helper = libsecret
+# [credential "https://github.com"]
+# 	helper = !gh auth git-credential
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore
+[init]
+	defaultBranch = main
+
+# ---- Colors ----
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow bold
+    local = cyan bold
+    remote = green bold
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+
+# ---- Remote ----
+[url "https://github.com/"]
+    insteadOf = gh:
+[url "https://gist.github.com/"]
+    insteadOf = gist:
+[url "https://bitbucket.org/"]
+    insteadOf = bb:
+
+# ---- Commits ----
+[commit]
+    cleanup = strip
+    template = ~/.gitmessage
+	gpgsign = yes
+
+# ---- Diff ----
+[diff]
+    tool = nvimdiff
+[difftool]
+    prompt = false
+[difftool "nvimdiff"]
+    cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+
+# ---- Foreign tools ----
+[tig]
+    line-graphics = utf-8
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[gpg]
+    program = gpg2
+[rerere]
+	enabled = true
+[tag]
+	gpgSign = 1
+
+# ---- Fetch ----
+[fetch]
+    all = true
+
+# ---- oh-my-zsh and bash-it ----
+[oh-my-zsh]
+    plugins = (git)
+[bash-it]
+    enable completion = true

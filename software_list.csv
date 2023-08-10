@@ -1,53 +1,53 @@
-#Method,Name/Link,Comment,Config source,Config destination,Script
+#Method,Name/Link,Comment,Has config
 
 # Most Needed: Core System
 
 # Graphics Drivers
-P,amd-ucode,AMD microcode updates,,,
-P,nvidia,NVIDIA drivers for Linux,,,
-P,nvidia-utils,NVIDIA drivers utilities,,,
-P,nvidia-settings,Tool for configuring the NVIDIA graphics driver,,,
-P,xf86-video-amdgpu,AMD GPU driver for XOrg,,,
-P,mesa,Open-source implementation of the OpenGL specification,,,
+P,amd-ucode,AMD microcode updates,,
+P,nvidia,NVIDIA drivers for Linux,,
+P,nvidia-utils,NVIDIA drivers utilities,,
+P,nvidia-settings,Tool for configuring the NVIDIA graphics driver,,
+P,xf86-video-amdgpu,AMD GPU driver for XOrg,,
+P,mesa,Open-source implementation of the OpenGL specification,,
 
 # XOrg
-P,xorg-server,XOrg X server,config/zsh,~/,
-P,xorg-xinit,XOrg initialisation program,,,
-P,xorg-xprop,Property displayer for X,,,
-P,xclip,Command line interface to the X11 clipboard,,,
+P,xorg-server,XOrg X server,,
+P,xorg-xinit,XOrg initialisation program,,
+P,xorg-xprop,Property displayer for X,,
+P,xclip,Command line interface to the X11 clipboard,,
 
 # Audio/Video Handling
-P,pipewire,Server for handling audio and video streams,,,
-P,pipewire-alsa,PipeWire-ALSA is an ALSA API based on PipeWire project,,,
-P,pipewire-pulse,PipeWire PulseAudio server,,,
-P,pipewire-jack,PipeWire-JACK is a JACK API based on PipeWire,,,
-P,wireplumber,Session/policy manager implementation for PipeWire,,,
+P,pipewire,Server for handling audio and video streams,,
+P,pipewire-alsa,PipeWire-ALSA is an ALSA API based on PipeWire project,,
+P,pipewire-pulse,PipeWire PulseAudio server,,
+P,pipewire-jack,PipeWire-JACK is a JACK API based on PipeWire,,
+P,wireplumber,Session/policy manager implementation for PipeWire,,
 
 # High Priority: Essential Tools
-P,git,Distributed version control system,,,
-P,zsh,Z shell - powerful shell alternative to bash,config/zsh/,~/.config/zsh,
-P,python,High-level general-purpose programming language,,,
-P,python-pip,Python package installer,,,
-P,neovim,Extended version of Vim text editor,config/nvim/,~/.config/nvim,
-P,ranger,Simple vim-like file manager,config/ranger/,~/.config/ranger,
-P,fzf,Command-line fuzzy finder,,,
+P,git,Distributed version control system,,
+P,zsh,Z shell - powerful shell alternative to bash,+,
+P,python,High-level general-purpose programming language,,
+P,python-pip,Python package installer,,
+P,neovim,Extended version of Vim text editor,+,
+P,ranger,Simple vim-like file manager,+,
+P,fzf,Command-line fuzzy finder,,
 
 # High Priority: User Interface
-P,i3-wm,Improved dynamic tiling window manager,config/i3/,~/.config/i3,
-P,rofi,A window switcher application launcher and dmenu replacement,,,
-P,dunst,Customizable and lightweight notification-daemon,,,
-P,polybar,A fast and easy-to-use status bar for window managers,,,
-A,alacritty,Cross-platform GPU-accelerated terminal emulator,,,
-P,picom,Lightweight compositor for X11,,,
-P,conky,Lightweight system monitor,,,
+P,i3-wm,Improved dynamic tiling window manager,+,
+P,rofi,A window switcher application launcher and dmenu replacement,+,
+P,dunst,Customizable and lightweight notification-daemon,,
+P,polybar,A fast and easy-to-use status bar for window managers,,
+A,alacritty,Cross-platform GPU-accelerated terminal emulator,,
+P,picom,Lightweight compositor for X11,,
+P,conky,Lightweight system monitor,,
 
 # Medium Priority: Additional Utilities
 
 # System Monitoring
-P,glances,Cross-platform system monitoring tool written in Python,,,
+P,glances,Cross-platform system monitoring tool written in Python,,
 
 # Browsers
-P,librewolf-bin,LibreWolf a privacy and security-focused browser,,,
+P,librewolf-bin,LibreWolf a privacy and security-focused browser,,
 # Suggested app: w3m (Text-based web browser)
 
 # Bluetooth Utilities
@@ -55,26 +55,26 @@ P,bluez,Bluetooth utility library,,
 P,bluez-utils,Bluetooth utility tools,,
 
 # Other Utilities
-P,task,Command-line TODO list manager,,,
-P,ffmpeg,Complete cross-platform solution to record convert and stream audio and video,,,
-P,polkit,Application-level toolkit for defining and handling authorizations,,,
-P,calcurse,Text-based calendar and scheduling application,,,
-P,neomutt,Email client with Notmuch sidebar compressed and encrypted header caches,,,
-P,zathura,Customizable and functional document viewer,,,
-P,pass,Standard Unix password manager,,,
-P,unclutter,Hides the mouse cursor when inactive,,,
+P,task,Command-line TODO list manager,,
+P,ffmpeg,Complete cross-platform solution to record convert and stream audio and video,,
+P,polkit,Application-level toolkit for defining and handling authorizations,,
+P,calcurse,Text-based calendar and scheduling application,,
+P,neomutt,Email client with Notmuch sidebar compressed and encrypted header caches,,
+P,zathura,Customizable and functional document viewer,,
+P,pass,Standard Unix password manager,,
+P,unclutter,Hides the mouse cursor when inactive,,
 
 # Text Processing
 
 # Networking Tools
-P,nmap,Network exploration tool and security/port scanner,,,
+P,nmap,Network exploration tool and security/port scanner,,
 
 # Low Priority: Programming & Development
-P,rust,Rust programming language and its package manager cargo,,,
+P,rust,Rust programming language and its package manager cargo,,
 
 # Low Priority: Virtualization Tools
 
 # File Systems Tools
 
 # Lowest Priority: Database Systems
-# P,postgresql,Powerful open source object-relational database system,,,
+# P,postgresql,Powerful open source object-relational database system,,

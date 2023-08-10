@@ -1,0 +1,385 @@
+#!/bin/bash
+
+# ==========================================
+# Mod Key Variable
+# ==========================================
+# Choose the Mod key (Mod1 = alt, Mod4 = Super/Windows key)
+set $mod Mod4
+
+# ==========================================
+# Workspace Variables
+# ==========================================
+# Define names for your workspaces for better organization and recognition
+set $ws1 "1: Web"       # Workspace for web browsers
+set $ws2 "2: Code"      # Workspace for coding and development
+set $ws3 "3: Chat"      # Workspace for chat and communications
+set $ws4 "4: Media"     # Workspace for media like video and music
+set $ws5 "5: Docs"      # Workspace for documents and productivity
+set $ws6 "6: Design"    # Workspace for design and graphics software
+set $ws7 "7: Virtual"   # Workspace for virtual machines or remote sessions
+set $ws8 "8: Games"     # Workspace for gaming
+set $ws9 "9: Mail"      # Workspace for email and related tasks
+set $ws10 "10: Misc"    # Workspace for miscellaneous applications
+
+# ==========================================
+# Basic Key Bindings
+# ==========================================
+# Switch to specific workspaces using modkey + number
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# ==========================================
+# Window Management Key Bindings
+# ==========================================
+# Move the focused window to a specific workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+10 move container to workspace $ws10
+
+# ==========================================
+# Basic Key Bindings for QWERTY Row
+# ==========================================
+bindsym $mod+q [some action for 'q']
+bindsym $mod+w [some action for 'w']
+bindsym $mod+e [some action for 'e']
+bindsym $mod+r [some action for 'r']
+bindsym $mod+t [some action for 't']
+bindsym $mod+y [some action for 'y']
+bindsym $mod+u [some action for 'u']
+bindsym $mod+i [some action for 'i']
+bindsym $mod+o [some action for 'o']
+bindsym $mod+p [some action for 'p']
+bindsym $mod+bracketleft [some action for '[']
+bindsym $mod+bracketright [some action for ']']
+
+# ==========================================
+# Basic Key Bindings for ASDF Row
+# ==========================================
+bindsym $mod+a [some action for 'a']
+bindsym $mod+s [some action for 's']
+bindsym $mod+d [some action for 'd']
+bindsym $mod+f [some action for 'f']
+bindsym $mod+g [some action for 'g']
+bindsym $mod+h [some action for 'h']
+bindsym $mod+j [some action for 'j']
+bindsym $mod+k [some action for 'k']
+bindsym $mod+l [some action for 'l']
+bindsym $mod+semicolon [some action for ';']
+
+# ==========================================
+# Basic Key Bindings for ZXC Row
+# ==========================================
+bindsym $mod+z [some action for 'z']
+bindsym $mod+x [some action for 'x']
+bindsym $mod+c [some action for 'c']
+bindsym $mod+v [some action for 'v']
+bindsym $mod+b [some action for 'b']
+bindsym $mod+n [some action for 'n']
+bindsym $mod+m [some action for 'm']
+bindsym $mod+comma [some action for ',']
+bindsym $mod+period [some action for '.']
+bindsym $mod+slash [some action for '/']
+
+# ==========================================
+# Shift-Modified Key Bindings for QWERTY Row
+# ==========================================
+bindsym $mod+Shift+q [shift action for 'Q']
+bindsym $mod+Shift+w [shift action for 'W']
+bindsym $mod+Shift+e [shift action for 'E']
+bindsym $mod+Shift+r [shift action for 'R']
+bindsym $mod+Shift+t [shift action for 'T']
+bindsym $mod+Shift+y [shift action for 'Y']
+bindsym $mod+Shift+u [shift action for 'U']
+bindsym $mod+Shift+i [shift action for 'I']
+bindsym $mod+Shift+o [shift action for 'O']
+bindsym $mod+Shift+p [shift action for 'P']
+bindsym $mod+Shift+bracketleft [shift action for '{']
+bindsym $mod+Shift+bracketright [shift action for '}']
+
+# ==========================================
+# Shift-Modified Key Bindings for ASDF Row
+# ==========================================
+bindsym $mod+Shift+a [shift action for 'A']
+bindsym $mod+Shift+s [shift action for 'S']
+bindsym $mod+Shift+d [shift action for 'D']
+bindsym $mod+Shift+f [shift action for 'F']
+bindsym $mod+Shift+g [shift action for 'G']
+bindsym $mod+Shift+h [shift action for 'H']
+bindsym $mod+Shift+j [shift action for 'J']
+bindsym $mod+Shift+k [shift action for 'K']
+bindsym $mod+Shift+l [shift action for 'L']
+bindsym $mod+Shift+semicolon [shift action for ':']
+
+# ==========================================
+# Shift-Modified Key Bindings for ZXC Row
+# ==========================================
+bindsym $mod+Shift+z [shift action for 'Z']
+bindsym $mod+Shift+x [shift action for 'X']
+bindsym $mod+Shift+c [shift action for 'C']
+bindsym $mod+Shift+v [shift action for 'V']
+bindsym $mod+Shift+b [shift action for 'B']
+bindsym $mod+Shift+n [shift action for 'N']
+bindsym $mod+Shift+m [shift action for 'M']
+bindsym $mod+Shift+comma [shift action for '<']
+bindsym $mod+Shift+period [shift action for '>']
+bindsym $mod+Shift+slash [shift action for '?']
+
+# ==========================================
+# Ctrl-Modified Key Bindings for QWERTY Row
+# ==========================================
+bindsym $mod+Control+q [ctrl action for 'q']
+bindsym $mod+Control+w [ctrl action for 'w']
+bindsym $mod+Control+e [ctrl action for 'e']
+bindsym $mod+Control+r [ctrl action for 'r']
+bindsym $mod+Control+t [ctrl action for 't']
+bindsym $mod+Control+y [ctrl action for 'y']
+bindsym $mod+Control+u [ctrl action for 'u']
+bindsym $mod+Control+i [ctrl action for 'i']
+bindsym $mod+Control+o [ctrl action for 'o']
+bindsym $mod+Control+p [ctrl action for 'p']
+bindsym $mod+Control+bracketleft [ctrl action for '[']
+bindsym $mod+Control+bracketright [ctrl action for ']']
+
+# ==========================================
+# Ctrl-Modified Key Bindings for ASDF Row
+# ==========================================
+bindsym $mod+Control+a [ctrl action for 'a']
+bindsym $mod+Control+s [ctrl action for 's']
+bindsym $mod+Control+d [ctrl action for 'd']
+bindsym $mod+Control+f [ctrl action for 'f']
+bindsym $mod+Control+g [ctrl action for 'g']
+bindsym $mod+Control+h [ctrl action for 'h']
+bindsym $mod+Control+j [ctrl action for 'j']
+bindsym $mod+Control+k [ctrl action for 'k']
+bindsym $mod+Control+l [ctrl action for 'l']
+bindsym $mod+Control+semicolon [ctrl action for ';']
+
+# ==========================================
+# Ctrl-Modified Key Bindings for ZXC Row
+# ==========================================
+bindsym $mod+Control+z [ctrl action for 'z']
+bindsym $mod+Control+x [ctrl action for 'x']
+bindsym $mod+Control+c [ctrl action for 'c']
+bindsym $mod+Control+v [ctrl action for 'v']
+bindsym $mod+Control+b [ctrl action for 'b']
+bindsym $mod+Control+n [ctrl action for 'n']
+bindsym $mod+Control+m [ctrl action for 'm']
+bindsym $mod+Control+comma [ctrl action for ',']
+bindsym $mod+Control+period [ctrl action for '.']
+bindsym $mod+Control+slash [ctrl action for '/']
+
+set $shutdown sudo -A shutdown -h now
+set $reboot sudo -A reboot
+set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
+set $hibernate sudo -A systemctl hibernate
+
+
+# workspace "1"           output eDP-1
+# workspace "2"           output eDP-1
+# workspace "3"           output eDP-1
+# workspace "4"           output eDP-1
+# workspace "5"           output eDP-1
+# workspace "6"           output eDP-1
+# workspace "7"           output eDP-1
+# workspace "8: Games"    output HDMI-1
+# workspace "9: Music"    output HDMI-1
+# workspace "10: Waiting" output HDMI-1
+
+set $inner_gaps 10
+set $outer_gaps 0
+gaps inner $inner_gaps
+gaps outer $outer_gaps
+
+for_window [class="^.*"] border pixel 2
+for_window [instance="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_tmuxdd"] resize set 625 450
+for_window [instance="dropdown_dropdowncalc"] resize set 800 300
+for_window [instance="dropdown_*"] move position center
+for_window [class="Pinentry"] sticky enable
+for_window [class="sent"] border pixel 0px
+for_window [class="Spotify"] move workspace $ws9
+for_window [class="libreoffice"] move workspace $ws4
+for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+for_window [window_role="GtkFileChooserDialog"] move position center
+for_window [title="Default - Wine desktop"] floating enable
+for_window [title="Picture-in-Picture"] resize set 1000 562
+for_window [title="Picture-in-Picture"] move position center
+assign [class="Gimp"] → $ws5
+
+bar {
+		# font pango:Source Sans Pro-10 10
+    font pango:FreeMono 10
+		# font pango:DroidSansMono Nerd Font 10
+    status_command i3blocks
+    colors {
+				background					#222222
+				statusline					#aaaaaa
+				focused_workspace		#fdf6e3 #222222 #00afff
+        active_workspace		#fdf6e3 #222222 #00afff
+				inactive_workspace	#222222 #aaaaaa #222222
+				urgent_workspace		#222222 #b71c1c #fdf6e3
+    }
+		position top mode dock
+    modifier None
+}
+client.focused					#073642 #095d4a #fdf6e3 #a8c6f2
+client.focused_inactive #073642 #073642 #fdf6e3 #a8c6f2
+client.unfocused				#073642 #073642 #a8c6f2 #a8c6f2
+client.urgent						#d33682 #530615 #fdf6e3 #e5786d
+
+# ---- Mod ----
+bindsym $mod+Return		exec $term
+bindsym $mod+space		focus mode_toggle
+bindsym $mod+Escape		workspace prev
+bindsym $mod+grave		exec --no-startup-id dmenuunicode
+bindsym $mod+Insert		exec --no-startup-id showclip
+# bindsym $mod+BackSpace
+
+bindsym $mod+Home		workspace $ws1
+bindsym $mod+End		workspace $ws10
+bindsym $mod+Prior	workspace prev
+bindsym $mod+Next		workspace next
+bindsym $mod+Tab		workspace back_and_forth
+bindsym $mod+semicolon		workspace next
+bindsym $mod+apostrophe		split horizontal ;; exec $term
+bindsym $mod+slash		split vertical ;; exec $term
+bindsym $mod+backslash		workspace back_and_forth
+bindsym $mod+mod2+KP_1 workspace $ws1
+bindsym $mod+mod2+KP_2 workspace $ws2
+bindsym $mod+mod2+KP_3 workspace $ws3
+bindsym $mod+mod2+KP_4 workspace $ws4
+bindsym $mod+mod2+KP_5 workspace $ws5
+bindsym $mod+mod2+KP_6 workspace $ws6
+bindsym $mod+mod2+KP_7 workspace $ws7
+bindsym $mod+mod2+KP_8 workspace $ws8
+bindsym $mod+mod2+KP_0 workspace $ws10
+bindsym $mod+KP_1 workspace $ws1
+bindsym $mod+KP_2 workspace $ws2
+bindsym $mod+KP_3 workspace $ws3
+bindsym $mod+KP_4 workspace $ws4
+bindsym $mod+KP_5 workspace $ws5
+bindsym $mod+KP_6 workspace $ws6
+bindsym $mod+KP_7 workspace $ws7
+bindsym $mod+KP_8 workspace $ws8
+bindsym $mod+KP_9 workspace $ws9
+bindsym $mod+KP_0 workspace $ws10
+bindsym $mod+F1		exec --no-startup-id hdmi-layout
+bindsym $mod+F2		restart
+bindsym $mod+F3		exec --no-startup-id displayselect
+bindsym $mod+F4		exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
+bindsym $mod+F5		exec --no-startup-id $netrefresh
+bindsym $mod+F6		exec --no-startup-id torwrap
+bindsym $mod+F7		exec --no-startup-id td-toggle
+bindsym $mod+F8		exec --no-startup-id mailsync
+bindsym $mod+F9		exec --no-startup-id dmenumount
+bindsym $mod+F10	exec --no-startup-id dmenuumount
+bindsym $mod+F11	exec --no-startup-id ducksearch
+bindsym $mod+F12	exec $term -e nmtui
+bindsym $mod+Up			focus up
+bindsym $mod+Down		focus down
+bindsym $mod+plus		exec --no-startup-id pulsemixer --change-volume +5 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym $mod+minus		exec --no-startup-id pulsemixer --change-volume -5 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym $mod+less		exec --no-startup-id playerctl previous
+bindsym $mod+greater		exec --no-startup-id playerctl next
+bindsym $mod+bracketleft	exec --no-startup-id playerctl position 10-
+bindsym $mod+bracketright		exec --no-startup-id playerctl position 10+
+bindsym Print			exec --no-startup-id maim ~/pics/pic-full-"$(date '+%y%m%d-%H%M-%S').png"
+bindsym $mod+Print		exec --no-startup-id dmenurecord
+bindsym $mod+Delete		exec --no-startup-id dmenurecord kill
+
+# ---- Shift ----
+bindsym $mod+Shift+Return	exec --no-startup-id samedir
+bindsym $mod+Shift+space	floating toggle
+bindsym $mod+Shift+Escape	exec --no-startup-id prompt "Exit i3?" "i3 exit"
+#bindsym $mod+Shift+grave
+#bindsym $mod+Shift+Insert
+bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Reboot computer?" "$reboot"
+bindsym $mod+Shift+Delete	exec --no-startup-id pulsemixer --mute ; exec --no-startup-id playerctl -a pause ; exec --no-startup-id pauseallmpv; workspace 0; exec $term -e htop ; exec $term -e lf
+set $freeze !
+mode "$freeze" {
+  bindsym $mod+Shift+F11 fullscreen toggle
+  bindsym $mod+Shift+f mode "default" ;; exec --no-startup-id dunstctl set-paused false
+}
+bindsym $mod+Shift+Home		    move container to workspace $ws1
+bindsym $mod+Shift+End		    move container to workspace $ws10
+bindsym $mod+Shift+Next		    move container to workspace next
+bindsym $mod+Shift+Up		    move up
+bindsym $mod+Shift+Down		    move down
+bindsym $mod+Shift+Left		    move left
+bindsym $mod+Shift+Right	    move right
+bindsym $mod+Shift+plus		    exec --no-startup-id pulsemixer --change-volume +10 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym $mod+Shift+minus	    exec --no-startup-id pulsemixer --change-volume -10 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym $mod+Shift+less		    exec --no-startup-id playerctl position 0
+bindsym $mod+Shift+bracketleft	exec --no-startup-id playerctl position 120-
+bindsym $mod+Shift+bracketright exec --no-startup-id playerctl position 120+
+bindsym Shift+Print		        exec --no-startup-id maimpick
+
+# ---- Ctrl ----
+bindsym $mod+Ctrl+Up		move workspace to output up
+bindsym $mod+Ctrl+Down		move workspace to output down
+bindsym $mod+Ctrl+Left		move workspace to output left
+bindsym $mod+Ctrl+Right		move workspace to output right
+bindsym $mod+Ctrl+plus		exec --no-startup-id pulsemixer --change-volume +1 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym $mod+Ctrl+minus	    exec --no-startup-id pulsemixer --change-volume -1 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+
+# #---Extra XF86 Keys---# #
+bindsym XF86Launch1										exec --no-startup-id xset dpms force off
+bindsym XF86AudioMute									exec --no-startup-id pulsemixer --toggle-mute && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym XF86AudioLowerVolume					        exec --no-startup-id pulsemixer --change-volume -5 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym Shift+XF86AudioLowerVolume		                exec --no-startup-id pulsemixer --change-volume -10 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym Control+XF86AudioLowerVolume	                exec --no-startup-id pulsemixer --change-volume -1 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym XF86AudioRaiseVolume					        exec --no-startup-id pulsemixer --change-volume +5 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym Shift+XF86AudioRaiseVolume		                exec --no-startup-id pulsemixer --change-volume +10 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym Control+XF86AudioRaiseVolume	                exec --no-startup-id pulsemixer --change-volume +1 && pkill -SIGRTMIN+6 ${STATUSBAR:-i3blocks}
+bindsym XF86PowerOff									exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+bindsym XF86Calculator								    exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+bindsym XF86Explorer									exec $term -e lf
+bindsym XF86WWW											exec --no-startup-id $BROWSER
+bindsym XF86ScreenSaver								    exec --no-startup-id i3lock-fancy
+bindsym XF86MyComputer								    exec $term -e lf
+bindsym XF86AudioNext									exec --no-startup-id playerctl next
+bindsym XF86AudioPlay									exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev									exec --no-startup-id playerctl previous
+bindsym XF86Eject										exec --no-startup-id playerctl stop
+bindsym XF86AudioRewind								    exec --no-startup-id playerctl position 10-
+bindsym XF86AudioForward							    exec --no-startup-id playerctl position 10+
+bindsym XF86HomePage									exec $BROWSER https://github.com/xon-dev/
+bindsym XF86Reload										restart
+bindsym XF86TouchpadToggle						        exec --no-startup-id toggletouchpad
+bindsym XF86TouchpadOn								    exec --no-startup-id synclient TouchpadOff=0
+bindsym XF86TouchpadOff								    exec --no-startup-id synclient TouchpadOff=1
+bindsym XF86Suspend										exec --no-startup-id i3lock-fancy
+bindsym XF86Close										kill
+bindsym XF86WebCam										exec --no-startup-id camtoggle
+bindsym XF86Mail										exec $term -e neomutt
+bindsym XF86Messenger									exec $term -e weechat
+bindsym XF86Search										exec $BROWSER https://duckduckgo.com
+bindsym XF86MonBrightnessDown					        exec --no-startup-id brightnessctl set 15%-
+bindsym XF86MonBrightnessUp						        exec --no-startup-id brightnessctl set 15%+
+bindsym XF86AudioMedia								    exec --no-startup-id noads-spot
+bindsym XF86Display										exec --no-startup-id displayselect
+bindsym XF86Documents									exec $term -e lf ~/docs
+bindsym XF86WLAN										exec $netrefresh
+bindsym $mod+Left										exec --no-startup-id playerctl position 10-
+bindsym $mod+Right										exec --no-startup-id playerctl position 10+
+
+exec_always --no-startup-id xkb-switch --i3
+exec_always --no-startup-id hdmi-layout
