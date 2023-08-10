@@ -32,7 +32,6 @@ chroot_system() {
 }
 
 # Define task names and corresponding functions in an associative array
-declare -A tasks
 tasks=(
     setup_partitions
     mount_boot_partition
