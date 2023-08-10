@@ -54,7 +54,6 @@ create_pacman_hook() {
 }
 
 # Define task names and corresponding functions in an associative array
-declare -A tasks
 tasks=(
     configure_timezone
     configure_localization
