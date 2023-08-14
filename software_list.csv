@@ -13,6 +13,7 @@ P,mesa,Open-source implementation of the OpenGL specification,
 # XOrg
 P,xorg-server,XOrg X server,
 P,xorg-xinit,XOrg initialisation program,
+P,xorg-xrandr,,
 P,xorg-xprop,Property displayer for X,
 P,xclip,Command line interface to the X11 clipboard,
 
@@ -47,7 +48,7 @@ P,conky,Lightweight system monitor,
 P,glances,Cross-platform system monitoring tool written in Python,
 
 # Browsers
-P,librewolf-bin,LibreWolf a privacy and security-focused browser,
+Y,ungoogled-chromium-bin,LibreWolf a privacy and security-focused browser,
 # Suggested app: w3m (Text-based web browser)
 
 # Bluetooth Utilities
@@ -82,3 +83,4 @@ P,rust,Rust programming language and its package manager cargo,
 P,tig,Text-mode interface for Git,
 Y,todo,Simple tasks organizer,
 P,yadm,Yet Another Dotfiles Manager,
+Y,bt-dualboot
