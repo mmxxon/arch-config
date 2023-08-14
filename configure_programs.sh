@@ -3,7 +3,6 @@
 
 log_file="error.log"
 software_list="software_list.csv"
-config_list="config_list.csv"
 
 # Create /root/src directory if it doesn't exist
 sudo mkdir -p /root/src
@@ -35,30 +34,8 @@ install_additional_software() {
           cd ..
           ;;
       esac
-    } 2>> $log_file || echo "Error installing $name. See $log_file for details."
-
-    # If the program has a config, copy it
-    if [[ $has_config == "+" ]]; then
-      echo "Copying config for $name"
-      copy_config "$name"
-    fi
+    } 2>> $log_file || echo "Error installing $name. See $log_file for details." | tee -a $log_file
   done < "$software_list"
-}
-
-copy_config() {
-  config_total=$(grep -c "^$1," "$config_list")
-  # Find the line in the config file for this program
-  config_count=0
-  while IFS=, read -r program config_src config_dst
-  do
-    if [[ "$program" == "$1" ]]; then
-      echo "[$((++config_count))/$config_total] Installing additional configs for $program"
-      {
-        sudo mkdir -p "$config_dst"
-        sudo cp -r "$config_src"/* "$config_dst"/
-      } 2>> $log_file || echo "Error copying config for $program. See $log_file for details."
-    fi
-  done < "$config_list"
 }
 
 # Calculate total programs to install
