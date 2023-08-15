@@ -26,10 +26,6 @@ generate_fstab() {
     genfstab -U /mnt >> /mnt/etc/fstab
 }
 
-chroot_system() {
-    echo "Chrooting into new system..."
-    arch-chroot /mnt 
-}
 
 # Define task names and corresponding functions in an associative array
 tasks=(
@@ -37,7 +33,6 @@ tasks=(
     mount_boot_partition
     install_base_system
     generate_fstab
-    chroot_system
 )
 
 # Catch errors

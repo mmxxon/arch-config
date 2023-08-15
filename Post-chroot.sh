@@ -44,15 +44,6 @@ install_configure_bootloader() {
     grub-mkconfig -o /boot/grub/grub.cfg
 }
 
-create_pacman_hook() {
-    echo "Creating pacman hooks..."
-    mkdir -p /etc/pacman.d/hooks/
-    # For logging explicitly installed packages
-    echo -e "[Trigger]\nOperation = Install\nOperation = Upgrade\nType = Package\nTarget = *\n\n[Action]\nDescription = Logging explicitly installed packages\nWhen = PostTransaction\nExec = /usr/bin/bash -c '/usr/bin/pacman -Qqe | /usr/bin/grep -Fx -f - /var/log/explicit_packages.log || echo \"$1\" >> /var/log/explicit_packages.log'\nNeedsTargets" > /etc/pacman.d/hooks/explicit-install.hook
-    # For logging removal of explicit packages
-    echo -e "[Trigger]\nOperation = Remove\nType = Package\nTarget = *\n\n[Action]\nDescription = Logging removal of explicit packages\nWhen = PostTransaction\nExec = /usr/bin/bash -c '/usr/bin/grep -Fxv \"$1\" /var/log/explicit_packages.log > /tmp/explicit_packages.log && mv /tmp/explicit_packages.log /var/log/explicit_packages.log'\nNeedsTargets" > /etc/pacman.d/hooks/explicit-remove.hook
-}
-
 # Define task names and corresponding functions in an associative array
 tasks=(
     configure_timezone
@@ -62,7 +53,6 @@ tasks=(
     create_new_user
     configure_sudo
     install_configure_bootloader
-    create_pacman_hook
 )
 
 # Catch errors

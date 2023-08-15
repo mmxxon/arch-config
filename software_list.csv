@@ -18,11 +18,11 @@ P,xorg-xprop,Property displayer for X,
 P,xclip,Command line interface to the X11 clipboard,
 
 # Audio/Video Handling
+P,wireplumber,Session/policy manager implementation for PipeWire,
 P,pipewire,Server for handling audio and video streams,
 P,pipewire-alsa,PipeWire-ALSA is an ALSA API based on PipeWire project,
 P,pipewire-pulse,PipeWire PulseAudio server,
 P,pipewire-jack,PipeWire-JACK is a JACK API based on PipeWire,
-P,wireplumber,Session/policy manager implementation for PipeWire,
 
 # High Priority: Essential Tools
 P,git,Distributed version control system,

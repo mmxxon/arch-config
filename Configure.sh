@@ -28,10 +28,6 @@ configure_pipewire() {
     pactl info | grep "Server Name"
 }
 
-configure_zsh() {
-    echo "Configuring ZSH with zinit..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-}
 
 # List of all functions to be executed
 tasks=(
@@ -39,7 +35,6 @@ tasks=(
     install_yay
     run_additional_script
     configure_pipewire
-    configure_zsh
 )
 
 # Catch errors
