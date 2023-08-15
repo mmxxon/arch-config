@@ -48,7 +48,7 @@ P,conky,Lightweight system monitor,
 P,glances,Cross-platform system monitoring tool written in Python,
 
 # Browsers
-Y,ungoogled-chromium-bin,LibreWolf a privacy and security-focused browser,
+A,ungoogled-chromium-bin,LibreWolf a privacy and security-focused browser,
 # Suggested app: w3m (Text-based web browser)
 
 # Bluetooth Utilities
@@ -81,6 +81,7 @@ P,rust,Rust programming language and its package manager cargo,
 # P,postgresql,Powerful open source object-relational database system,
 
 P,tig,Text-mode interface for Git,
-Y,todo,Simple tasks organizer,
+A,todo,Simple tasks organizer,
 P,yadm,Yet Another Dotfiles Manager,
-Y,bt-dualboot
+A,bt-dualboot,,
+A,mkinitcpio-firmware,,
