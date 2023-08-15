@@ -26,12 +26,16 @@ P,pipewire-jack,PipeWire-JACK is a JACK API based on PipeWire,
 
 # High Priority: Essential Tools
 P,git,Distributed version control system,
+P,tig,Text-mode interface for git,
 P,zsh,Z shell - powerful shell alternative to bash,
 P,python,High-level general-purpose programming language,
 P,python-pip,Python package installer,
 P,neovim,Extended version of Vim text editor,
 P,ranger,Simple vim-like file manager,
 P,fzf,Command-line fuzzy finder,
+A,todo,Todo list manager from AUR,
+P,yadm,Yet Another Dotfiles Manager,
+A,mkinitcpio-firmware,Firmware files for mkinitcpio,
 
 # High Priority: User Interface
 P,i3-wm,Improved dynamic tiling window manager,
@@ -41,6 +45,8 @@ P,polybar,A fast and easy-to-use status bar for window managers,
 A,alacritty,Cross-platform GPU-accelerated terminal emulator,
 P,picom,Lightweight compositor for X11,
 P,conky,Lightweight system monitor,
+P,gnome-keyring,Password and key management for GNOME,
+P,man-db,Database for man-pages,
 
 # Medium Priority: Additional Utilities
 
@@ -79,10 +85,3 @@ P,rust,Rust programming language and its package manager cargo,
 
 # Lowest Priority: Database Systems
 # P,postgresql,Powerful open source object-relational database system,
-
-P,tig,Text-mode interface for Git,
-A,todo,Simple tasks organizer,
-P,yadm,Yet Another Dotfiles Manager,
-A,bt-dualboot,,
-A,mkinitcpio-firmware,,
-P,gnome-keyring,,
