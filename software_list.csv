@@ -54,7 +54,8 @@ P,man-db,Database for man-pages,
 P,glances,Cross-platform system monitoring tool written in Python,
 
 # Browsers
-A,ungoogled-chromium-bin,LibreWolf a privacy and security-focused browser,
+A,librewolf-bin,LibreWolf a privacy and security-focused browser,
+A,arkenfox-user.js,Firefox privacy, security and anti-tracking: a comprehensive user.js template for configuration and hardening
 # Suggested app: w3m (Text-based web browser)
 
 # Bluetooth Utilities
