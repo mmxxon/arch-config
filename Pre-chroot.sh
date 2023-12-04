@@ -5,15 +5,10 @@ setup_partitions() {
     echo "Setting up partitions..."
     mkfs.fat -F32 /dev/nvme0n1p1
     mkswap /dev/nvme0n1p2
-    swapon /dev/nvme0n1p2
     mkfs.ext4 /dev/nvme0n1p3
     mount /dev/nvme0n1p3 /mnt
-}
-
-mount_boot_partition() {
-    echo "Mounting boot partition..."
-    mkdir /mnt/boot
-    mount /dev/nvme0n1p1 /mnt/boot
+    swapon /dev/nvme0n1p2
+    mount --mkdir /dev/nvme0n1p1 /mnt/boot
 }
 
 install_base_system() {
@@ -30,7 +25,6 @@ generate_fstab() {
 # Define task names and corresponding functions in an associative array
 tasks=(
     setup_partitions
-    mount_boot_partition
     install_base_system
     generate_fstab
 )
