@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Define the tasks in functions
+# TODO pacman-key --init, populate archlinux
 setup_partitions() {
     echo "Setting up partitions..."
     mkfs.fat -F32 /dev/nvme0n1p1
