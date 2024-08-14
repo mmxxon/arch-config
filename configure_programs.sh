@@ -25,7 +25,7 @@ install_additional_software() {
     {
       case $method in
         P) sudo pacman -Sy --noconfirm "$name" > /dev/null ;;
-        A) yay -Sy --noconfirm "$name" > /dev/null ;;
+        A) paru -Sy --noconfirm "$name" > /dev/null ;;
         G) 
           cd /root/src
           sudo git clone "$name"
