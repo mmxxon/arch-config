@@ -13,8 +13,8 @@ install_yay() {
     cd paru-bin
     makepkg -si --noconfirm 
     cd ..
-    rm -rf yay
-    yay -Syu --noconfirm
+    rm -rf paru-bin
+    paru -Syu --noconfirm
 }
 
 run_additional_script() {
