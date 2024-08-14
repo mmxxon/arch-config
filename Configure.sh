@@ -9,11 +9,12 @@ check_network() {
 
 install_yay() {
     echo "Installing yay..."
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
+    git clone git clone https://aur.archlinux.org/paru-bin.git
+    cd paru-bin
+    makepkg -si --noconfirm 
     cd ..
     rm -rf yay
+    yay -Syu --noconfirm
 }
 
 run_additional_script() {
