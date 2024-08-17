@@ -9,7 +9,7 @@ check_network() {
 
 install_yay() {
     echo "Installing yay..."
-    git clone git clone https://aur.archlinux.org/paru-bin.git
+    git clone https://aur.archlinux.org/paru-bin.git
     cd paru-bin
     makepkg -si --noconfirm 
     cd ..

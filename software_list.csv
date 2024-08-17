@@ -10,19 +10,13 @@ P,nvidia-settings,Tool for configuring the NVIDIA graphics driver,
 P,xf86-video-amdgpu,AMD GPU driver for XOrg,
 P,mesa,Open-source implementation of the OpenGL specification,
 
-# XOrg
-P,xorg-server,XOrg X server,
-P,xorg-xinit,XOrg initialisation program,
-P,xorg-xrandr,,
-P,xorg-xprop,Property displayer for X,
-P,xclip,Command line interface to the X11 clipboard,
-
 # Audio/Video Handling
 P,wireplumber,Session/policy manager implementation for PipeWire,
 P,pipewire,Server for handling audio and video streams,
 P,pipewire-alsa,PipeWire-ALSA is an ALSA API based on PipeWire project,
 P,pipewire-pulse,PipeWire PulseAudio server,
 P,pipewire-jack,PipeWire-JACK is a JACK API based on PipeWire,
+P,pulsemixer,Audio configuration utility,
 
 # High Priority: Essential Tools
 P,git,Distributed version control system,
@@ -38,14 +32,7 @@ P,yadm,Yet Another Dotfiles Manager,
 A,mkinitcpio-firmware,Firmware files for mkinitcpio,
 
 # High Priority: User Interface
-P,i3-wm,Improved dynamic tiling window manager,
-P,rofi,A window switcher application launcher and dmenu replacement,
-P,dunst,Customizable and lightweight notification-daemon,
-P,polybar,A fast and easy-to-use status bar for window managers,
 A,alacritty,Cross-platform GPU-accelerated terminal emulator,
-P,picom,Lightweight compositor for X11,
-P,conky,Lightweight system monitor,
-P,gnome-keyring,Password and key management for GNOME,
 P,man-db,Database for man-pages,
 
 # Medium Priority: Additional Utilities
@@ -54,9 +41,6 @@ P,man-db,Database for man-pages,
 P,glances,Cross-platform system monitoring tool written in Python,
 
 # Browsers
-A,librewolf-bin,LibreWolf a privacy and security-focused browser,
-A,arkenfox-user.js,Firefox privacy, security and anti-tracking: a comprehensive user.js template for configuration and hardening
-# Suggested app: w3m (Text-based web browser)
 
 # Bluetooth Utilities
 P,bluez,Bluetooth utility library,
@@ -70,7 +54,6 @@ P,calcurse,Text-based calendar and scheduling application,
 P,neomutt,Email client with Notmuch sidebar compressed and encrypted header caches,
 P,zathura,Customizable and functional document viewer,
 P,pass,Standard Unix password manager,
-P,unclutter,Hides the mouse cursor when inactive,
 
 # Text Processing
 
